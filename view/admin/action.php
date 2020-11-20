@@ -284,12 +284,11 @@ if(isset($_POST["c-submit"]) && !empty($_POST["c-submit"])){
     $comment = mi_secure_input($_POST['comments']);
     $cid = mi_secure_input($_POST['comment_case_id']);
     $user_id = mi_secure_input($_POST['user_id']);
-
      if(empty($comment)){
          $msg = array('message' => 'Comments field blunk', 'status'=>'error');
 
      }else{
-         $type=mi_db_read_by_id('lawyers', array('id'=>$user_id));
+         $type = mi_db_read_by_id('lawyer', array('id'=>$user_id));
          if(!empty($type)){
              $data= array(
                  'clints_case_id'=> $cid,
@@ -300,9 +299,9 @@ if(isset($_POST["c-submit"]) && !empty($_POST["c-submit"])){
 
          }else{
              $data= array(
-                 'clints_case_id'=> $cid,
                  'user_id'       => $user_id,
                  'type'          => 'Admin',
+                 'clints_case_id'=> $cid,
                  'comments'      => $comment
              );
 

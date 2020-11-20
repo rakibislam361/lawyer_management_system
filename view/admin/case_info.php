@@ -203,7 +203,7 @@
                                                     </div>
                                                 </div>
                                             </article>
-                                                <?php }?>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </div>

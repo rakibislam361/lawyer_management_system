@@ -32,7 +32,7 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="card rounded"><img src="../<?=$lawyer['image'];?>" alt=""></div>
+                        <div class="card" style="height: 50%"><img src="../<?=$lawyer['image'];?>" alt="" style="height:100% "></div>
                         <labal>Bar council certificate </labal>
                         <div><h5><icon class="fa fa-file"></icon><a href="../<?=$lawyer['documents'];?>"> Flie download </a></h5></div>
                     </div>
@@ -71,7 +71,17 @@
                         </div>
                         <hr><div class="row">
                             <div class="col-sm-4"><strong>Services </strong></div>
-                            <div class="col-sm-8"><?=$lawyer['services_id'];?></div>
+                            <div class="col-sm-8"><?php
+                                if(!empty($lawyer['services_id'])){
+                                    $service= json_decode($lawyer['services_id']);
+                                    $srv = $service->service_id;
+                                    $srvc= mi_db_read_by_id('service',array('id'=>$srv))[0];
+                                    $categorice= $service->category;
+                                    $cat= implode(", ", $categorice);
+                                    echo $srvc['service_name'];
+                                    echo $cat;
+                                }
+                                ?></div>
                         </div>
                         <hr><div class="row">
                             <div class="col-sm-4"><strong>Bio </strong></div>

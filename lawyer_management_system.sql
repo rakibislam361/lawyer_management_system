@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2020 at 08:28 PM
+-- Generation Time: Nov 20, 2020 at 10:51 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -42,7 +42,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `phone`, `email`, `address`, `password`, `status`) VALUES
-(1, 'Rakib islam', 1950235178, 'islamrakib361@gmail.com', ' Dhanmondi 27 number Dhaka, Bangladesh ', '827ccb0eea8a706c4c34a16891f84e7b', 1);
+(2, 'Rakib islam', 1950235178, 'islamrakib361@gmail.com', ' Dhanmondi 27 number Dhaka, Bangladesh ', '827ccb0eea8a706c4c34a16891f84e7b', 1);
 
 -- --------------------------------------------------------
 
@@ -150,12 +150,7 @@ CREATE TABLE `clients_cases` (
 
 INSERT INTO `clients_cases` (`id`, `case_id`, `client_id`, `lawyer_id`, `case_document`, `case_details`, `uploaded_date`, `status_change_date`, `status`) VALUES
 (8, 2029059532, 5, 1, 'uploads/174af993931b1748b3b5d2ba4f3203e9lawer_management_system_idea.docx', 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bono', '2020-10-08 19:07:49', '2020-11-14 01:44:05', 2),
-(26, 68973, 5, 1, 'uploads/bbba073913eab420a0d7d9a9a4b8b980d85af3a8a64cb30e186e8892c09954eblawer_management_system_idea.docx', 'SASDGFHGJH', '2020-11-07 21:38:59', '0000-00-00 00:00:00', 6),
-(27, 71866, 5, 113, '', 'hugytf6rd5sedrfuyn', '2020-11-20 14:53:27', '0000-00-00 00:00:00', 1),
-(28, 26181, 5, 113, '', 'hugytf6rd5sedrfuyn', '2020-11-20 14:53:31', '0000-00-00 00:00:00', 1),
-(29, 42503, 5, 113, '', 'hugytf6rd5sedrfuyn', '2020-11-20 14:53:45', '0000-00-00 00:00:00', 1),
-(30, 51885, 5, 113, '', 'kohfdtsraesdfh;', '2020-11-20 14:59:27', '0000-00-00 00:00:00', 1),
-(31, 16550, 5, 113, '', 'kohfdtsraesdfh;', '2020-11-20 15:00:16', '0000-00-00 00:00:00', 1);
+(26, 68973, 5, 1, 'uploads/bbba073913eab420a0d7d9a9a4b8b980d85af3a8a64cb30e186e8892c09954eblawer_management_system_idea.docx', 'SASDGFHGJH', '2020-11-07 21:38:59', '0000-00-00 00:00:00', 6);
 
 -- --------------------------------------------------------
 
@@ -209,12 +204,7 @@ CREATE TABLE `enroll_membership` (
 --
 
 INSERT INTO `enroll_membership` (`id`, `lawyer_id`, `membership_id`, `start_date`, `end_date`, `payment_status`, `status`) VALUES
-(5, 1, 3, '2020-11-12 02:50:50', '2020-12-12 02:50:50', '2', 1),
-(6, 1, 3, '2020-11-12 02:54:09', '2020-12-12 02:54:09', '2', 1),
-(7, 1, 6, '2020-11-12 03:18:38', '2021-03-12 03:18:38', '2', 1),
-(8, 1, 3, '2020-11-12 03:24:14', '2020-12-12 03:24:14', '2', 1),
-(9, 1, 3, '2020-11-12 03:24:46', '2020-12-12 03:24:46', '2', 1),
-(10, 1, 6, '2020-11-13 14:57:33', '2021-03-13 14:57:33', '2', 1);
+(5, 1, 3, '2020-11-12 02:50:50', '2020-12-12 02:50:50', '2', 1);
 
 -- --------------------------------------------------------
 
@@ -279,8 +269,10 @@ CREATE TABLE `lawyer_case_comnt` (
 INSERT INTO `lawyer_case_comnt` (`id`, `clints_case_id`, `user_id`, `comments`, `type`, `documents`, `comments_date`, `status`) VALUES
 (26, 1, 1, 'hello', 'Admin', '', '2020-11-08 11:28:15', 1),
 (30, 1, 1, 'hi', 'Lawyer', '', '2020-11-08 11:36:25', 1),
-(31, 1, 1, 'this is next hearing date', 'Lawyer', '', '2020-11-14 18:59:41', 1),
-(32, 8, 1, 'hello', 'Lawyer', '', '2020-11-14 19:02:54', 1);
+(44, 2, 2, 'SDFHJ', 'Lawyer', '', '2020-11-21 03:30:55', 1),
+(45, 2, 2, 'kujtyhrtgfd', 'Admin', '', '2020-11-21 03:40:30', 1),
+(46, 2, 2, 'kujyhrb', 'Admin', '', '2020-11-21 03:40:48', 1),
+(47, 2, 2, 'befvs', 'Admin', '', '2020-11-21 03:40:55', 1);
 
 -- --------------------------------------------------------
 
@@ -384,8 +376,8 @@ CREATE TABLE `membership_plan` (
 
 INSERT INTO `membership_plan` (`id`, `plan_name`, `month`, `price`, `details`, `status`) VALUES
 (1, 'Free trial', 1, 1, 'free for 1month', 2),
-(2, 'Premium', 6, 10, '6 months of access to our network of attorneys Unlimited number of 30-minute consultations on new legal matters Review of legal documents up to 10 pages for no added cost No hourly fees or surprises An ongoing relationship with professionals you trust\r\nRe', 1),
-(3, 'Premium gold', 1, 6, '12 months of access to our network of attorneys Unlimited number of 30-minute consultations on new legal matters Review of legal documents up to 10 pages for no added cost No hourly fees or surprises An ongoing relationship with professionals you trust An', 2),
+(2, 'Premium', 1, 1000, '6 months of access to our network of attorneys Unlimited number of 30-minute consultations on new legal matters Review of legal documents up to 10 pages for no added cost No hourly fees or surprises An ongoing relationship with professionals you trust\r\nRe', 1),
+(3, 'Premium gold', 1, 1500, '12 months of access to our network of attorneys Unlimited number of 30-minute consultations on new legal matters Review of legal documents up to 10 pages for no added cost No hourly fees or surprises An ongoing relationship with professionals you trust An', 2),
 (6, 'Basic', 4, 500, 'hello this is basic plan', 2);
 
 -- --------------------------------------------------------
@@ -603,7 +595,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `admin_case_comments`
@@ -657,7 +649,7 @@ ALTER TABLE `lawyer`
 -- AUTO_INCREMENT for table `lawyer_case_comnt`
 --
 ALTER TABLE `lawyer_case_comnt`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `lawyer_category`

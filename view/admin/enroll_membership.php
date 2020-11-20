@@ -62,11 +62,14 @@
                                         <td><?=$plan_detls['month'];?> month</td>
                                         <td><?=$start_date;?></td>
                                         <td><?=$end_date;?></td>
-                                        <td><?=$membership['payment_status'];?></td>
-
+                                        <?php if($membership['payment_status']==1){?>
+                                        <td><span class="badge badge-warning">Non paid</span></td>
+                                        <?php }else{?>
+                                            <td><span class="badge badge-success">Paid</span></td>
+                                        <?php }?>
                                         <td>
-                                            <a href="lawyer_details.php?id=" class="btn btn-sm btn-info">View</a>
-                                            <button class="btn btn-sm btn-danger reject-lawyer" value="">Reject</button>
+                                            <a href="lawyer_details.php?id=<?=$member_lawyer['id'];?>" class="btn btn-sm btn-info">View</a>
+                                            <button type="submit" class="btn btn-sm btn-danger reject-lawyer">Reject</button>
                                         </td>
                                     </tr>
                                 <?php }}?>

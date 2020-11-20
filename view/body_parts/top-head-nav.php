@@ -6,11 +6,11 @@
                 <div id="navbar_menu" class="float-right">
                     <ul class="ul">
                         <li><a <?php if(basename($_SERVER['PHP_SELF'])=='index.php'){?> class="active"<?php }?> href="<?=MI_BASE_URL?>">Home</a></li>
-                        <li><a <?php if(basename($_SERVER['PHP_SELF'])=='about.php'){?> class="active"<?php }?> href="<?=MI_BASE_URL?>about.php">About</a></li>
+<!--                        <li><a --><?php //if(basename($_SERVER['PHP_SELF'])=='about.php'){?><!-- class="active"--><?php //}?><!-- href="--><?//=MI_BASE_URL?><!--about.php">About</a></li>-->
                         <!--                    <li><a --><?php //if(basename($_SERVER['PHP_SELF'])=='practise_area.php'){?><!-- class="active"--><?php //}?><!-- href="--><?//=MI_BASE_URL?><!--practise_area.php">Practice Area</a></li>-->
                         <li><a <?php if(basename($_SERVER['PHP_SELF'])=='attorneys.php'){?> class="active"<?php }?> href="<?=MI_BASE_URL?>attorneys.php">Attorneys</a></li>
-                        <li><a <?php if(basename($_SERVER['PHP_SELF'])=='cases.php'){?> class="active"<?php }?> href="<?=MI_BASE_URL?>cases.php">Cases</a></li>
-                        <li><a <?php if(basename($_SERVER['PHP_SELF'])=='blog.php'){?> class="active"<?php }?> href="<?=MI_BASE_URL?>blog.php">Blog</a>
+<!--                        <li><a --><?php //if(basename($_SERVER['PHP_SELF'])=='cases.php'){?><!-- class="active"--><?php //}?><!-- href="--><?//=MI_BASE_URL?><!--cases.php">Cases</a></li>-->
+<!--                        <li><a --><?php //if(basename($_SERVER['PHP_SELF'])=='blog.php'){?><!-- class="active"--><?php //}?><!-- href="--><?//=MI_BASE_URL?><!--blog.php">Blog</a>-->
                             <!--                    <li><a --><?php //if(basename($_SERVER['PHP_SELF'])=='blog_detail.php'){?><!-- class="active"--><?php //}?><!-- href="--><?//=MI_BASE_URL?><!--blog_detail.php">Blog Details</a></li>-->
                         <li><a <?php if(basename($_SERVER['PHP_SELF'])=='contact.php'){?> class="active"<?php }?> href="<?=MI_BASE_URL?>contact.php">Contact us</a></li>
                         <?php if (mi_get_session('id') && !empty(mi_get_session('id'))){?>

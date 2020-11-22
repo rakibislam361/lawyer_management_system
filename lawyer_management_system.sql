@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2020 at 10:51 PM
+-- Generation Time: Nov 22, 2020 at 09:16 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -42,7 +42,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `phone`, `email`, `address`, `password`, `status`) VALUES
-(2, 'Rakib islam', 1950235178, 'islamrakib361@gmail.com', ' Dhanmondi 27 number Dhaka, Bangladesh ', '827ccb0eea8a706c4c34a16891f84e7b', 1);
+(9999, 'Rakib islam', 1950235178, 'islamrakib361@gmail.com', ' Dhanmondi 27 number Dhaka, Bangladesh ', '827ccb0eea8a706c4c34a16891f84e7b', 1);
 
 -- --------------------------------------------------------
 
@@ -149,7 +149,7 @@ CREATE TABLE `clients_cases` (
 --
 
 INSERT INTO `clients_cases` (`id`, `case_id`, `client_id`, `lawyer_id`, `case_document`, `case_details`, `uploaded_date`, `status_change_date`, `status`) VALUES
-(8, 2029059532, 5, 1, 'uploads/174af993931b1748b3b5d2ba4f3203e9lawer_management_system_idea.docx', 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bono', '2020-10-08 19:07:49', '2020-11-14 01:44:05', 2),
+(8, 2029059532, 5, 1, 'uploads/174af993931b1748b3b5d2ba4f3203e9lawer_management_system_idea.docx', 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bono', '2020-10-08 19:07:49', '2020-11-21 13:27:39', 2),
 (26, 68973, 5, 1, 'uploads/bbba073913eab420a0d7d9a9a4b8b980d85af3a8a64cb30e186e8892c09954eblawer_management_system_idea.docx', 'SASDGFHGJH', '2020-11-07 21:38:59', '0000-00-00 00:00:00', 6);
 
 -- --------------------------------------------------------
@@ -204,7 +204,7 @@ CREATE TABLE `enroll_membership` (
 --
 
 INSERT INTO `enroll_membership` (`id`, `lawyer_id`, `membership_id`, `start_date`, `end_date`, `payment_status`, `status`) VALUES
-(5, 1, 3, '2020-11-12 02:50:50', '2020-12-12 02:50:50', '2', 1);
+(16, 1, 2, '2020-11-23 01:49:12', '2020-12-23 01:49:12', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -241,9 +241,9 @@ CREATE TABLE `lawyer` (
 --
 
 INSERT INTO `lawyer` (`id`, `name`, `phone`, `email`, `nid`, `image`, `address`, `gender`, `education`, `law_member`, `awards`, `self_details`, `case_type`, `lawyer_category_id`, `services_id`, `service_area`, `documents`, `status`, `token`, `password`, `request_date`) VALUES
-(1, 'Rakib', '01950235178', 'islamrakib361@gmail.com', 2111111, 'uploads/testimo_pr.png', 'Dhaka Bangladesh', 'male', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt molliti', '', '> Venture Capital Law - Barrister of the Year - Bangladesh - Lawyer Monthly\r\n> Mergers & Acquisitions-Lawyer of the year 2017 by Finance Monthly\r\n> Recommended lawyer by Legal 500\r\n> Winner of International Advisory Experts Award for 2017\r\n> Lawyer Monthl', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt molliti', '2', 2, '{\"service_id\":\"2\",\"category\":[\"Banking & Finance\",\"Business Formation\",\"Consumer Law\",\"Corporate Law\",\"Insurance\"]}', 'dhaka', 'uploads/bbf104db32a91445cc82c0d15164858bd85af3a8a64cb30e186e8892c09954eblawer_management_system_idea.docx', 3, '', '827ccb0eea8a706c4c34a16891f84e7b', '2020-10-24 15:39:15'),
-(104, 'Mahbub', '01556600550', 'misujon58262@gmail.com', 12345, 'uploads/ab_2.png', 'Dhaka, Banagladesh', 'male', 'aretrsdyfguhi', '1', '2', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt molliti', '1', 1, '{\"service_id\":\"1\",\"category\":[\"Debt Relief\",\"Debtor & Creditor\",\"Foreclosure\"]}', 'Barisal', 'uploads/bbf104db32a91445cc82c0d15164858bd85af3a8a64cb30e186e8892c09954eblawer_management_system_idea.docx', 3, '', '827ccb0eea8a706c4c34a16891f84e7b', '2020-10-24 15:39:15'),
-(113, 'David Marshall\r\n', '01556600550', 'misujon58262@gmail.com', 12345, 'uploads/team2.png', 'Dhaka, Banagladesh', 'male', '', '0', '0', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt molliti', '1', 1, '{\"service_id\":\"1\",\"category\":[\"Debt Relief\",\"Debtor & Creditor\",\"Foreclosure\"]}', 'Barisal', 'uploads/bbf104db32a91445cc82c0d15164858bd85af3a8a64cb30e186e8892c09954eblawer_management_system_idea.docx', 3, '', '827ccb0eea8a706c4c34a16891f84e7b', '2020-10-24 15:39:15');
+(1, 'Rakib', '01950235178', 'islamrakib361@gmail.com', 2111111, 'uploads/ab_3.png', 'Dhaka Bangladesh', 'male', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt molliti', 'Enrolled as Advocate of the Appellate Division of the Supreme Court of Bangladesh.\r\nEnrolled as Advocate of the High Court Division of the Supreme Court of Bangladesh.\r\nEnrolled as Advocate of the Courts subordinate to the High Division of the Supreme Cou', 'Venture Capital Law - Barrister of the Year - Bangladesh - Lawyer Monthly.\r\nMergers & Acquisitions-Lawyer of the year 2017 by Finance Monthly.\r\nRecommended lawyer by Legal 500.\r\nWinner of International Advisory Experts Award for 2017.\r\nLawyer Monthly, Pri', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt molliti', '2', 2, '{\"service_id\":\"2\",\"category\":[\"Banking & Finance\",\"Business Formation\",\"Consumer Law\",\"Corporate Law\",\"Insurance\"]}', 'dhaka', 'uploads/bbf104db32a91445cc82c0d15164858bd85af3a8a64cb30e186e8892c09954eblawer_management_system_idea.docx', 3, '', '827ccb0eea8a706c4c34a16891f84e7b', '2020-10-24 15:39:15'),
+(104, 'Mahbub', '01556600550', 'misujon58262@gmail.com', 12345, 'uploads/ab_2.png', 'Dhaka, Banagladesh', 'male', 'Enrolled as Advocate of the Appellate Division of the Supreme Court of Bangladesh.\r\nEnrolled as Advocate of the High Court Division of the Supreme Court of Bangladesh.\r\nEnrolled as Advocate of the Courts subordinate to the High Division of the Supreme Cou', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt molliti', 'Venture Capital Law - Barrister of the Year - Bangladesh - Lawyer Monthly.\r\n', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt molliti', '1', 1, '{\"service_id\":\"1\",\"category\":[\"Debt Relief\",\"Debtor & Creditor\",\"Foreclosure\"]}', 'Barisal', 'uploads/bbf104db32a91445cc82c0d15164858bd85af3a8a64cb30e186e8892c09954eblawer_management_system_idea.docx', 3, '', '827ccb0eea8a706c4c34a16891f84e7b', '2020-10-24 15:39:15'),
+(113, 'David Marshall\r\n', '01556600550', 'misujon58262@gmail.com', 12345, 'uploads/team2.png', 'Dhaka, Banagladesh', 'male', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt molliti', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt molliti', 'Venture Capital Law - Barrister of the Year - Bangladesh - Lawyer Monthly.\r\n', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt molliti', '1', 1, '{\"service_id\":\"1\",\"category\":[\"Debt Relief\",\"Debtor & Creditor\",\"Foreclosure\"]}', 'Barisal', 'uploads/bbf104db32a91445cc82c0d15164858bd85af3a8a64cb30e186e8892c09954eblawer_management_system_idea.docx', 3, '', '827ccb0eea8a706c4c34a16891f84e7b', '2020-10-24 15:39:15');
 
 -- --------------------------------------------------------
 
@@ -269,10 +269,7 @@ CREATE TABLE `lawyer_case_comnt` (
 INSERT INTO `lawyer_case_comnt` (`id`, `clints_case_id`, `user_id`, `comments`, `type`, `documents`, `comments_date`, `status`) VALUES
 (26, 1, 1, 'hello', 'Admin', '', '2020-11-08 11:28:15', 1),
 (30, 1, 1, 'hi', 'Lawyer', '', '2020-11-08 11:36:25', 1),
-(44, 2, 2, 'SDFHJ', 'Lawyer', '', '2020-11-21 03:30:55', 1),
-(45, 2, 2, 'kujtyhrtgfd', 'Admin', '', '2020-11-21 03:40:30', 1),
-(46, 2, 2, 'kujyhrb', 'Admin', '', '2020-11-21 03:40:48', 1),
-(47, 2, 2, 'befvs', 'Admin', '', '2020-11-21 03:40:55', 1);
+(54, 26, 2, 'hello', 'Admin', '', '2020-11-21 15:23:31', 1);
 
 -- --------------------------------------------------------
 
@@ -409,7 +406,10 @@ INSERT INTO `orders` (`id`, `user_id`, `item_name`, `item_id`, `item_price_curre
 (2, '1', '3', 'Premium gold', 'USD', '6', 'USD', '0CK91212SL7216228', 'COMPLETED', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (3, '1', '6', 'Basic', 'USD', '500', 'USD', '643579707X4123350', 'COMPLETED', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (4, '1', '3', 'Premium gold', 'USD', '6', 'USD', '3GX70939BG357633X', 'COMPLETED', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(5, '1', '6', 'Basic', 'USD', '500', 'USD', '53470983X13079322', 'COMPLETED', '2020-11-13 14:58:11', '0000-00-00 00:00:00');
+(5, '1', '6', 'Basic', 'USD', '500', 'USD', '53470983X13079322', 'COMPLETED', '2020-11-13 14:58:11', '0000-00-00 00:00:00'),
+(6, '1', '1', 'Free trial', 'USD', '1', 'USD', '43X78280310516318', 'COMPLETED', '2020-11-23 01:08:13', '0000-00-00 00:00:00'),
+(7, '1', '1', 'Free trial', 'USD', '1', 'USD', '165224969C010415X', 'COMPLETED', '2020-11-23 01:48:11', '0000-00-00 00:00:00'),
+(8, '1', '2', 'Premium', 'USD', '1000', 'USD', '1B592229CF724290E', 'COMPLETED', '2020-11-23 01:49:53', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -421,18 +421,21 @@ CREATE TABLE `service` (
   `id` int(25) NOT NULL,
   `service_name` varchar(30) NOT NULL,
   `type_id` int(25) NOT NULL COMMENT ' criminal or civil',
-  `service_details` varchar(255) NOT NULL
+  `service_details` varchar(255) NOT NULL,
+  `image` text NOT NULL,
+  `status` int(11) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `service`
 --
 
-INSERT INTO `service` (`id`, `service_name`, `type_id`, `service_details`) VALUES
-(1, 'Bankruptcy', 1, ''),
-(2, 'Business Law', 2, ''),
-(3, 'Car Accident', 2, ''),
-(4, 'Criminal Defense', 1, '');
+INSERT INTO `service` (`id`, `service_name`, `type_id`, `service_details`, `image`, `status`) VALUES
+(1, 'Bankruptcy', 1, '', 'uploads/la_ser3.png', 1),
+(2, 'Business Law', 2, '', 'uploads/law_contact.png', 1),
+(3, 'Car Accident', 2, '', 'uploads/la_ser2.png', 1),
+(4, 'Criminal Defense', 1, '', 'uploads/la_ser4.png', 1),
+(20, 'Family law', 1, '', 'uploads/5e5878090792991180ec501a204b6c0fla_ser1.png', 1);
 
 -- --------------------------------------------------------
 
@@ -467,7 +470,8 @@ INSERT INTO `services` (`id`, `service_id`, `services_name`, `services_details`)
 (13, 3, 'Motorcycle Accident', ''),
 (14, 3, 'Truck Accident', ''),
 (15, 4, 'Domestic Violence', ''),
-(16, 4, 'Expungement', '');
+(16, 4, 'Expungement', ''),
+(17, 4, 'rape', '');
 
 --
 -- Indexes for dumped tables
@@ -595,7 +599,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000;
 
 --
 -- AUTO_INCREMENT for table `admin_case_comments`
@@ -637,7 +641,7 @@ ALTER TABLE `contact_us`
 -- AUTO_INCREMENT for table `enroll_membership`
 --
 ALTER TABLE `enroll_membership`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `lawyer`
@@ -649,7 +653,7 @@ ALTER TABLE `lawyer`
 -- AUTO_INCREMENT for table `lawyer_case_comnt`
 --
 ALTER TABLE `lawyer_case_comnt`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `lawyer_category`
@@ -691,19 +695,19 @@ ALTER TABLE `membership_plan`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

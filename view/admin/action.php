@@ -418,10 +418,15 @@ if(isset($_POST["service_insert"]) && !empty($_POST["service_insert"])){
     if(isset($_POST["action"]) && $_POST["action"] == 'm-plan'){
     $msg = [];
     $lid = mi_secure_input($_POST['law_id']);
-    $case_id = mi_secure_input($_POST['case_id']);
+    $url = mi_secure_input($_POST['url']);
     $checkbox = mi_secure_input($_POST['m-plan']);
     $end_date = mi_db_read_by_id('membership_plan', array('id'=>$checkbox))[0];
     $day = $end_date['month'];
+    if(empty($url)){
+        $case_id = mi_secure_input($_POST['case_id']);
+    }else{
+        mi_set_session('url', $url);
+    }
      if(empty($checkbox)){
          $msg = array('message' => 'Please select a membership plan', 'status'=>'error');
      }else{
@@ -437,7 +442,11 @@ if(isset($_POST["service_insert"]) && !empty($_POST["service_insert"])){
 
              $member_id = mi_db_read_all('enroll_membership', 'id', 'DESC', 1)[0];
              mi_set_session('member_id',$member_id);
-             mi_set_session('case_id',$case_id);
+             if(empty($url)){
+                 mi_set_session('case_id',$case_id);
+             }else{
+
+             }
              $msg = array('message' => 'Please complete your Payment', 'status'=>'success', 'url'=>'checkout.php');
          }else{
              $msg = array('message' => 'Something worng', 'status'=>'error', 'url'=>'case_details.php');
@@ -480,8 +489,14 @@ if(isset($_POST["pay_now"]) && !empty($_POST["pay_now"])){
         if ($insert == true) {
             mi_db_update('enroll_membership', array('payment_status' => 2), array('lawyer_id'=>$user_id));
             $approve= mi_db_update('clients_cases', array('status'=>5) , array('id'=>$case_id));
-            $msg = array('message' => 'Payment successful', 'status' => 'success', 'url' => 'case_details.php?id='.$case_id);
-            mi_unset('case_id');
+            if (mi_get_session('url')){
+                $msg = array('message' => 'Payment successful', 'status' => 'success', 'url' => 'lawyer_profile.php');
+                mi_unset('url');
+            }else{
+                $msg = array('message' => 'Payment successful', 'status' => 'success', 'url' => 'case_details.php?id='.$case_id);
+                mi_unset('case_id');
+            }
+
         } else {
             $msg = array('message' => 'Something worng', 'status' => 'error', 'url' => 'case_details.php');
             mi_unset('case_id');

@@ -34,7 +34,7 @@ $lawyer_of = mi_db_read_by_id('lawyer_category', array('id'=>$lawyer['lawyer_cat
                                                         <div class="col-md-8 m-auto">
                                                             <?php
                                                                 $lawyer_id=$_GET['id'];
-                                                                 $law_data=mi_db_read_by_id('enroll_membership', array('lawyer_id'=>$lawyer_id));
+                                                                 $law_data=mi_db_read_by_id('enroll_membership', array('lawyer_id'=>$lawyer_id,'payment_status'=>2));
                                                                     if(isset($law_data) && !empty($law_data)){
                                                                         $law_data=mi_db_read_by_id('enroll_membership', array('lawyer_id'=>$lawyer_id))[0];
                                                                         $membership=mi_db_read_by_id('membership_plan', array('id'=>$law_data['membership_id']))[0];
@@ -61,10 +61,10 @@ $lawyer_of = mi_db_read_by_id('lawyer_category', array('id'=>$lawyer['lawyer_cat
                                                             </div>
                                                                <?php }else{?>
                                                                 <h1>You don't have any membership</h1>
-                                                                <button  class="btn btn-sm btn-primary">Applied for Membership</button>
-<!--                                                                        --><?php //echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
+                                                                        <button data-toggle="modal" data-target="#exampleModal" class="btn btn-primary m-auto"> APPLY FOR MEMBERSHIP </button>
+<!--                                                                <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-sm btn-primary">Applied for Membership</button>-->
 
-                                                                    <?php }?>
+                                                                <?php }?>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -97,6 +97,7 @@ $lawyer_of = mi_db_read_by_id('lawyer_category', array('id'=>$lawyer['lawyer_cat
                                                             <div class="card-header py-3">
                                                                 <h6 class="m-0 font-weight-bold text-primary"><?=$row['plan_name'];?>
                                                                     <input type="radio" name="m-plan" value="<?=$row['id'];?>" class="float-right"></h6>
+                                                                <input type="hidden" name="url" value="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
                                                             </div>
                                                             <div class="card-body">
                                                                 <div class="text-center">

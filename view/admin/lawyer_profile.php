@@ -51,7 +51,11 @@
                                                                     <a href="lawyer_member_info.php?id=<?=$lawyer['id'];?>" style="color: black">
                                                                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                                                         <h6 class="mb-0"></svg>Membership</h6>
-                                                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                                                        <?php $mdata=mi_db_read_by_id('enroll_membership', array('lawyer_id'=>mi_get_session('lawyer_id')))[0]; if($mdata['payment_status']==2){?>
+                                                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                                                        <?php }else{?>
+                                                                            <i class="fa fa-ban" aria-hidden="true"></i>
+                                                                        <?php }?>
                                                                     </li>
                                                                     </a>
                                                                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">

@@ -188,6 +188,39 @@ $(document).ready(function(){
     });
 });
 
+// Add Lawyer services
+$(document).ready(function(){
+    $('#add_services').on('submit', function(e){
+        e.preventDefault();
+        var fd = new FormData(this);
+        $.ajax({
+            url: 'action.php',
+            type: 'post',
+            // data: $(this).serialize(),
+            data: fd,
+            dataType: 'JSON',
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function(data){
+                // var result = JSON.parse(data);
+                var result = data;
+                $.toast({
+                    hading:'notification',
+                    text: result.message,
+                    position:'top-center',
+                    icon: result.status
+                });
+                setTimeout(function(){
+                    location.reload();
+                }, 2000);
+            }
+        });
+    });
+});
+
+
+
 // reject cases from admin
 $(document).ready(function () {
     $('.reject_case').on('click',function () {

@@ -235,7 +235,6 @@
 //-------------------------------------update lawyer profile--------------------------------------//
 
 
-
 //----------------------------------Lawyer profile upgrade start---------------------------------------//
 if(isset($_POST["upgrade-form"]) && !empty($_POST["upgrade-form"])){
     $msg=[];
@@ -249,20 +248,27 @@ if(isset($_POST["upgrade-form"]) && !empty($_POST["upgrade-form"])){
     }else{
 
         if (!empty($education)){
-            $data=array(
-                'education'  =>$education
-            );
-        }elseif(!empty($award)){
-            $data=array(
-                'awards'     =>$award
-            );
-        }elseif(!empty($member)) {
-            $data=array(
-               'law_member'=>$member
-            );
-        }else {
-            $data = array();
+            $edata=$education;
+        }else{
+            $edata='';
         }
+        if (!empty($member)){
+            $ldata=$member;
+        }else{
+            $ldata='';
+        }
+        if (!empty($award)){
+            $adata=$award;
+        }else{
+            $adata='';
+        }
+
+            $data=array(
+                'education'     =>$edata,
+                'law_member'    =>$ldata,
+                'awards'        =>$adata
+            );
+
 
         $upgrade = mi_db_update('lawyer', $data, array('id'=>$id));
         if($upgrade){
@@ -275,7 +281,6 @@ if(isset($_POST["upgrade-form"]) && !empty($_POST["upgrade-form"])){
     return;
 }
 //----------------------------------Lawyer profile upgrade end---------------------------------------//
-
 
 
 //----------------------------------Lawyer and Admin comments---------------------------------------//
@@ -299,9 +304,9 @@ if(isset($_POST["c-submit"]) && !empty($_POST["c-submit"])){
 
          }else{
              $data= array(
+                 'clints_case_id'=> $cid,
                  'user_id'       => $user_id,
                  'type'          => 'Admin',
-                 'clints_case_id'=> $cid,
                  'comments'      => $comment
              );
 
@@ -320,6 +325,53 @@ if(isset($_POST["c-submit"]) && !empty($_POST["c-submit"])){
     return;
 }
 //----------------------------------Lawyer and Admin comments end---------------------------------------//
+
+
+//----------------------------------Add Lawyer service---------------------------------------//
+if(isset($_POST["service_insert"]) && !empty($_POST["service_insert"])){
+    $msg=[];
+    $service = mi_secure_input($_POST['service']);
+    $services = mi_secure_input($_POST['services']);
+    $service_type = mi_secure_input($_POST['service_type']);
+    if (!empty($_FILES['service_image'])){
+        $image  = $_FILES['service_image'];
+    }
+        if(empty($service)){
+            if (empty($service_type)){
+                $msg = array('message' => ' Please select service type ', 'status'=>'error');
+            }else{
+                if(isset($image['name']) && !empty($image['name'])){
+                    $up_img = str_replace('../', '', mi_uploader($image['name'], $image['tmp_name'], '../uploads/', array('png', 'PNG', 'jpg', 'jpeg', 'JPG', 'gif', 'GIF', 'JPEG', 'svg', 'SVG')));
+                    $data= array(
+                        'service_name'  => $services,
+                        'type_id'       => $service_type,
+                        'image'         => $up_img
+                    );
+                    $insert = mi_db_insert('service', $data);
+                    $msg = array('message' => ' Service add successfully ', 'status'=>'success');
+                }else{
+                    $data= array(
+                        'service_name'  => $services,
+                        'type_id'       => $service_type,
+                    );
+                    $insert = mi_db_insert('service', $data);
+                    $msg = array('message' => ' Service add successfully ', 'status'=>'success');
+                }
+
+            }
+        }else{
+            $data= array(
+                'service_id'    => $service,
+                'services_name' => $services
+            );
+            $insert = mi_db_insert('services', $data);
+            $msg = array('message' => ' Services Add successfully ', 'status'=>'success');
+        }
+
+    echo json_encode($msg);
+    return;
+}
+//----------------------------------Add Lawyer service end---------------------------------------//
 
 
 //----------------------------------Case update information start---------------------------------------//

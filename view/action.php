@@ -13,7 +13,6 @@ if (isset($_POST['data'])) {
 <?php    
 
 //----------------------------------Lawyer signup start---------------------------------------//
-              
 if(isset($_POST['lawyer_reg']) && !empty($_POST['lawyer_reg'])){
     $msg = [];
     $name = mi_secure_input($_POST['name']);
@@ -99,14 +98,10 @@ if(isset($_POST['lawyer_reg']) && !empty($_POST['lawyer_reg'])){
     echo json_encode($msg);
     return;
 }
-
-
 //----------------------------------Lawyer signup end---------------------------------------//
-              
 
 
 //----------------------------------Signup for Client---------------------------------------//
-
 if(isset($_POST['save']) && !empty($_POST['save'])){
     $msg = [];
     $name = mi_secure_input($_POST['name']);
@@ -166,12 +161,10 @@ if(isset($_POST['save']) && !empty($_POST['save'])){
     echo json_encode($msg);
     return;
 }
-
 //----------------------------------signup for clients end---------------------------------------//
 
 
 //----------------------------------Update Client profile ---------------------------------------//
-
 if(isset($_POST['update']) && !empty($_POST['update'])){
     $msg=[];
     $name = mi_secure_input($_POST['name']);
@@ -203,12 +196,10 @@ if(isset($_POST['update']) && !empty($_POST['update'])){
     echo json_encode($msg);
     return;
 }
-
 //----------------------------------Update clients end---------------------------------------//
 
 
 //----------------------------------Upload Client case details---------------------------------------//
-
 if(isset($_POST['upload-file']) && !empty($_POST['upload-file'])){
     $msg = [];
     $cdetails = mi_secure_input($_POST['case_details']);
@@ -247,7 +238,6 @@ if(isset($_POST['upload-file']) && !empty($_POST['upload-file'])){
     echo json_encode($msg);
     return;
 }
-
 //----------------------------------Upload Client case details end---------------------------------------//
 
 
@@ -288,13 +278,10 @@ if(isset($_POST['upload-file']) && !empty($_POST['upload-file'])){
       echo json_encode($msg);
       return;
 }
-
 //----------------------------------Contact us form end---------------------------------------//
 
 
-
 //--------------------------------------------User Login---------------------------------------//
-
 if (isset($_POST['login'])) {
     $msg = [];
     $email = mi_secure_input($_POST['email']);

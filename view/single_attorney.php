@@ -38,15 +38,6 @@
 <!-- section -->
 <section class="section padding_layout_1">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="full">
-                    <div class="heading_main text_align_center">
-                        <h2>Attorney's Profile</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
         <?php
             $id = $_GET['id'];
             $data = mi_db_read_by_id('lawyer', array('id'=>$id ,'status'=>3))[0];
@@ -92,13 +83,21 @@
                     <h5>Contact</h5>
                     <hr>
                     <p><i class="glyphicon glyphicon-gift"></i>  <?php
-                        $datas =  $data['phone'];
-                        $result = substr($datas, 0, 2);
-                        $result .= "*******";
-                        $result .= substr($datas, 7, 4);
-                        echo $result;
-                        ?><br>
-                    example@gmail.com</p>
+                            $datas =  $data['phone'];
+                            $result = substr($datas, 0, 2);
+                            $result .= "*******";
+                            $result .= substr($datas, 7, 4);
+                            echo $result;
+                        ?>
+                        <br>
+                        <?php
+                            $email =  $data['email'];
+                            $result = substr($email, 0, 2);
+                            $result .= "**********@gmail.com";
+                            $result .= substr($email, 10, 0);
+                            echo $result;
+                        ?>
+                    </p>
                 </section>
             </div>
             <div class="col-md-8">
@@ -116,32 +115,17 @@
                     <br>
                     <h5>Education & Bar Admission</h5>
                     <hr>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-                        quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt molliti</p>
+                    <p><?=$data['education'];?></p>
                     <br>
                     <h5>Membership & Awards </h5>
                     <hr>
                     <h6><strong>Membership</strong></h6>
                     <ul>
-                        <li><h6> > Enrolled as Advocate of the Appellate Division of the Supreme Court of Bangladesh.</h6></li>
-                        <li><h6> > Enrolled as Advocate of the High Court Division of the Supreme Court of Bangladesh.</h6></li>
-                        <li><h6> > Enrolled as Advocate of the Courts subordinate to the High Division of the Supreme Court of Bangladesh.</h6></li>
-                        <li><h6> > Member, International Bar Association</h6></li>
-                        <li><h6> > Member, Inter Pacific Bar Association</h6></li>
-                        <li><h6> > Life member of the Honorable Society of Lincoln's Inn, UK; and</h6></li>
-                        <li><h6> > Member, Supreme Court Bar Association of Bangladesh</h6></li>
-                        <li><h6> > Member, Dhaka Bar Association of Bangladesh</h6></li>
-
+                        <li><?=$data['law_member'];?></li>
                     </ul>
                     <h6><strong>Awards</strong></h6>
                     <ul>
-                        <li><h6> > Venture Capital Law - Barrister of the Year - Bangladesh - Lawyer Monthly</h6></li>
-                        <li><h6> > Mergers & Acquisitions-Lawyer of the year 2017 by Finance Monthly</h6></li>
-                        <li><h6> > Recommended lawyer by Legal 500</h6></li>
-                        <li><h6> > Winner of International Advisory Experts Award for 2017</h6></li>
-                        <li><h6> > Lawyer Monthly, Private Client 2017- "Lawyer of the Year" for 2017.</h6></li>
-                        <li><h6> > Finance Monthly Legal Award 2016- "Best Commercial Lawyer".</h6></li>
-                        <li><h6> > Recommended lawyer by British High Commission</h6></li>
+                        <li><?=$data['awards'];?></li></li>
                     </ul>
                     <br>
                     <h5>Case progress</h5>

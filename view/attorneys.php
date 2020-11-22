@@ -38,15 +38,6 @@
     <!-- section -->
     <section class="section padding_layout_1">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="full">
-                        <div class="heading_main text_align_center">
-                            <h2>Our Attorneys</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <?php $datas = mi_db_read_by_id('lawyer', array('status'=>3));
             if (!empty($datas)) {
                 foreach ($datas as $key=> $data) {
@@ -82,15 +73,7 @@
                                             </a>
                                         <?php }?>
                                     </p>
-                                    <p><?=(strlen($data['self_details'])>250?substr($data['self_details'],'0', '250').'<a href="single_attorney.php?id='.$data['id'].'" style="color: white;"> see more...</a>':$data['self_details'])?></p>
-                                    <div class="social_icon_team">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
+                                    <p><?=(strlen($data['self_details'])>350?substr($data['self_details'],'0', '250').'<a href="single_attorney.php?id='.$data['id'].'" style="color: white;"> see more...</a>':$data['self_details'])?></p>
                                 </div>
                             </div>
                         </div>
@@ -121,16 +104,8 @@
                                             </a>
                                         <?php }?>
                                     </p>
-                                    <p><?=(strlen($data['self_details'])>250?substr($data['self_details'],'0', '250').'<a href="single_attorney.php?id='.$data['id'].'" style="color: white;"> see more...</a>':$data['self_details'])?></p>
+                                    <p><?=(strlen($data['self_details'])>350?substr($data['self_details'],'0', '250').'<a href="single_attorney.php?id='.$data['id'].'" style="color: white;"> see more...</a>':$data['self_details'])?></p>
 
-                                    <div class="social_icon_team">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4 left-padding_0">

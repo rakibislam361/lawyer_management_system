@@ -33,19 +33,19 @@ $lawyer_of = mi_db_read_by_id('lawyer_category', array('id'=>$lawyer['lawyer_cat
                                            <div class="col-4">
                                                <div class="form-group">
                                                    <label>Education History</label>
-                                                   <textarea type="text" cols="30" rows="10" class="form-control" name="education" placeholder="education...."></textarea>
+                                                   <textarea type="text" cols="30" rows="10" class="form-control" name="education" value="<?=(isset($lawyer['education'])&&!empty($lawyer['education'])?$lawyer['education']:'')?>" placeholder="education...."><?=(isset($lawyer['education'])&&!empty($lawyer['education'])?$lawyer['education']:'')?></textarea>
                                                </div>
                                            </div>
                                            <div class="col-4">
                                                <div class="form-group">
                                                    <label>Member oF</label>
-                                                   <textarea type="text" cols="30" rows="10" class="form-control" name="member" placeholder="member of...."></textarea>
+                                                   <textarea type="text" cols="30" rows="10" class="form-control" name="member" value="<?=(isset($lawyer['law_member'])&&!empty($lawyer['law_member'])?$lawyer['law_member']:'')?>" placeholder="member of...."><?=(isset($lawyer['law_member'])&&!empty($lawyer['law_member'])?$lawyer['law_member']:'')?></textarea>
                                                </div>
                                            </div>
                                            <div class="col-4">
                                                <div class="form-group">
                                                    <label>Award</label>
-                                                   <textarea type="text" cols="30" rows="10" class="form-control" name="award" placeholder="what type of award you achieved.... "></textarea>
+                                                   <textarea type="text" cols="30" rows="10" class="form-control" name="award" value="<?=(isset($lawyer['awards'])&&!empty($lawyer['awards'])?$lawyer['awards']:'')?>" placeholder="what type of award you achieved.... "><?=(isset($lawyer['awards'])&&!empty($lawyer['awards'])?$lawyer['awards']:'')?></textarea>
                                                </div>
                                            </div>
                                        </div>

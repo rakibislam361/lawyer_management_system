@@ -150,15 +150,13 @@
                                 <div class="col-md-9">
                                     <div class="timeline-centered timeline-sm">
                                         <?php
-                                        $data = mi_db_read_by_id('lawyer_case_comnt', array('user_id'=>$case_dtls['lawyer_id']));
+                                        $data = mi_db_read_by_id('lawyer_case_comnt', array('clints_case_id'=>$case_dtls['id']));
                                         if (count($data)>0) {
                                             foreach ($data as $key => $lawyer) {
-                                                $ldata = mi_db_read_by_id('lawyer', array('id'=>$lawyer['user_id']))[0];
                                                 $comments_date= date("m/d/y",strtotime($lawyer['comments_date']));
                                                 $comments_time= date( "g:i a",strtotime($lawyer['comments_date']));
-
                                                 if($lawyer['type']=='Lawyer'){
-
+                                                    $ldata = mi_db_read_by_id('lawyer', array('id'=>$lawyer['user_id']))[0];
                                                     ?>
 
                                                     <article class="timeline-entry left-aligned">
@@ -171,7 +169,7 @@
                                                         </div>
                                                         <?php if (count($data) == ($key+1)){?>
                                                             <div class="timeline-entry-inner">
-                                                                <div style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);" class="timeline-icon comment_modal" mival="<?=$id;?>">
+                                                                <div style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);" class="timeline-icon comment_modal" mival="<?=$case_dtls['id'];?>">
                                                                     <i class="fa fa-plus"></i>
                                                                 </div>
                                                             </div>
@@ -189,7 +187,7 @@
                                                         </div>
                                                         <?php if (count($data) == ($key+1)){?>
                                                             <div class="timeline-entry-inner">
-                                                                <div style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);" class="timeline-icon comment_modal" mival="<?=$id;?>">
+                                                                <div style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);" class="timeline-icon comment_modal" mival="<?=$case_dtls['id'];?>">
                                                                     <i class="fa fa-plus"></i>
                                                                 </div>
                                                             </div>
@@ -198,7 +196,7 @@
                                                 <?php }}}else{?>
                                             <article class="timeline-entry">
                                                 <div class="timeline-entry-inner">
-                                                    <div style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);" class="timeline-icon comment_modal" mival="<?=$id;?>">
+                                                    <div style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);" class="timeline-icon comment_modal" mival="<?=$case_dtls['id'];?>">
                                                         <i class="fa fa-plus"></i>
                                                     </div>
                                                 </div>

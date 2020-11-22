@@ -51,7 +51,37 @@
     </div>
 </div>
 <!-- end section -->
-
+<!-- section -->
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="full">
+                <div class="owl-carousel owl-carousel-mousewheel owl-theme" style=" height: 300px;">
+                <?php
+                    $data = mi_db_read_all('service');
+                    foreach ($data as $service){
+                    ?>
+                    <div class="item">
+                        <div class="full">
+                            <div class="blog_serv text_align_center" style="height: 300px;">
+                                <div class="blog_serv_img"><a href="search_attorney.php?id=<?=$service['id'];?>"><img src="<?=$service['image'];?>" alt="#" style="height: 100px;" /></a></div>
+                                <div class="blog_serv_head">
+                                    <h4><a href="search_attorney.php?id=<?=$service['id'];?>"><?=$service['service_name'];?></a></h4>
+                                </div>
+                                <div class="blog_serv_descr">
+                                    <p class="large_2"></p>
+                                </div>
+                                <div class="blog_serv_arrow"><a href="search_attorney.php?id=<?=$service['id'];?>"><i class="fa fa-long-arrow-right"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                <?php }?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
 <!-- section -->
 <section class="section padding_layout_1">
     <div class="container">
@@ -72,7 +102,7 @@
         <div class="row margin_bottom_30_all">
             <div class="col-md-4 right-padding_0">
                 <div class="full team_img_blog">
-                    <img class="img-responsive" src="<?=$data['image'];?>" style="height: 380px; max-height: 380px;"alt="#" />
+                    <a href="single_attorney.php?id=<?=$data['id']?>"><img class="img-responsive" src="<?=$data['image'];?>" style="height: 380px; max-height: 380px;"alt="#" /></a>
                 </div>
             </div>
             <div class="col-md-8">
@@ -99,15 +129,7 @@
                             </a>
                         <?php }?>
                     </p>
-                    <p><?=(strlen($data['self_details'])>250?substr($data['self_details'],'0', '250').'<a href="single_attorney.php?id='.$data['id'].'" style="color: white;"> see more...</a>':$data['self_details'])?></p>
-                    <div class="social_icon_team">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
+                    <p><?=(strlen($data['self_details'])>350?substr($data['self_details'],'0', '250').'<a href="single_attorney.php?id='.$data['id'].'" style="color: white;"> see more...</a>':$data['self_details'])?></p>
                 </div>
             </div>
         </div>
@@ -138,21 +160,12 @@
                             </a>
                         <?php }?>
                     </p>
-                    <p><?=(strlen($data['self_details'])>250?substr($data['self_details'],'0', '250').'<a href="single_attorney.php?id='.$data['id'].'" style="color: white;"> see more...</a>':$data['self_details'])?></p>
-
-                    <div class="social_icon_team">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
+                    <p><?=(strlen($data['self_details'])>350?substr($data['self_details'],'0', '250').'<a href="single_attorney.php?id='.$data['id'].'" style="color: white;"> see more...</a>':$data['self_details'])?></p>
                 </div>
             </div>
             <div class="col-md-4 left-padding_0">
                 <div class="full team_img_blog right_side">
-                    <img class="img-responsive" src="<?=$data['image'];?>" style="height: 380px; max-height: 380px;"alt="#" />
+                    <a href="single_attorney.php?id=<?=$data['id']?>"><img class="img-responsive" src="<?=$data['image'];?>" style="height: 380px; max-height: 380px;"alt="#" /></a>
                 </div>
             </div>
         </div>

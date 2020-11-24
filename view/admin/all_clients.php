@@ -48,7 +48,7 @@
                             foreach ($clients as $client){
                             ?>
                             <tbody>
-                            <tr style="background-color: rgb(9 15 23);">
+                            <tr>
                                 <td><?=$client['name'];?></td>
                                 <td><?=$client['email'];?></td>
                                 <td><?=$client['phone'];?></td>

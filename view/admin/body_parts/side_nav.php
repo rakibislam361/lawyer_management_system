@@ -33,9 +33,6 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="mail_send.php" >
-            <i class="fas fa-fw fa-envelope"></i><span>Mailing</span>
-        </a>
         <a class="nav-link collapsed" href="enroll_membership.php" >
             <i class="fas fa-fw fa-user"></i><span>Enroll Lawyer list</span>
         </a>
@@ -51,28 +48,13 @@
         <a class="nav-link collapsed" href="all_cases.php" >
             <i class="fas fa-fw fa-file"></i><span>Cases</span>
         </a>
+        <a class="nav-link collapsed" href="service.php" >
+            <i class="fas fa-fw fa-file"></i><span>Lawyer services</span>
+        </a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
-
-    <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Utilities</span>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Utilities:</h6>
-                    <a class="collapse-item" href="service.php">Lawyer services</a>
-                </div>
-            </div>
-        </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
 
 
     <li class="nav-item">

@@ -13,7 +13,7 @@ define('MI_SESSION', true);
 
 /*==================================== MI BASE URL =========================================*/
 
-define('MI_BASE_URL', 'http://localhost/www/lawyer-update-new/');
+define('MI_BASE_URL', 'http://localhost/git/lawyer/');
 
 /*==================================== MI BASE URL END =========================================*/
 
